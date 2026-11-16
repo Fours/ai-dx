@@ -26,15 +26,18 @@ The record of improvements to Kyle's developer experience with Claude Code: sett
 Most changes made in a retro land outside this repo:
 
 - `~/.claude/settings.json`: global settings. Attribution is already turned off there.
-- `~/.claude/CLAUDE.md`: global instructions covering background, git rules and the "set it up like the portfolio" pattern.
-- `~/.claude/skills/`: user-level skills: `add-posthog`, `add-s3-deploy`, `mobile-gate`, `next-task`.
-- `~/.claude/scheduled-tasks/`: scheduled tasks such as `daily-job-search`. Its project is `~/Documents/Dev/job-search`.
+- `~/.claude/CLAUDE.md`: global instructions covering background (portfolio work plus the YouTube channels and book series), git rules (including push-with-commit) and the "set it up like the portfolio" pattern.
+- `~/.claude/skills/`: user-level skills: `add-posthog`, `add-s3-deploy`, `mobile-gate`, `next-task`, `update-dashboard`.
+- `~/.claude/scheduled-tasks/`: scheduled tasks.
+  - `daily-job-search`: its project is `~/Documents/Dev/job-search`.
+  - `update-project-dashboard`: runs `/update-dashboard --unattended` nightly in `~/Documents/Dev/project-dashboard`.
+  - Their transcripts are in each project's folder under `~/.claude/projects/`.
 - `~/.claude/projects/<project>/*.jsonl`: chat transcripts, one file per session. Each project's folder name is its path with `/` replaced by `-`. Each project's memory is in its `memory/` folder.
-- Project-level `CLAUDE.md` and `AGENTS.md` files in `~/Documents/Dev/*`. Project instructions override the global ones.
+- Project-level `CLAUDE.md` and `AGENTS.md` files and project skills (`.claude/skills/`) in `~/Documents/Dev/*`. Project instructions override the global ones. `cozy/` and `litrpg/` have forked copies of the same chapter skills.
 
 Before recommending a change to any of these, read the current file. Earlier docs may be out of date.
 
 ## Conventions
 
-- Follow the git rules in `~/.claude/CLAUDE.md`: commit only when asked, straight to `main`, with no Claude attribution. This folder isn't a git repo yet.
+- Follow the git rules in `~/.claude/CLAUDE.md`: commit only when asked, straight to `main`, with no Claude attribution.
 - Write docs in plain, specific language. Name the exact file or setting that changed, and give evidence such as counts and which projects were involved.
